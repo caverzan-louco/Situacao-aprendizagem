@@ -1,0 +1,141 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    margin: 0;
+    background: linear-gradient(135deg, #ff8e00, #e52e71); 
+    color: #fff;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.7); 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+
+.lamp-container {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;  
+    align-items: center;  
+}
+
+.lamp {
+    width: 150px;
+    height: 220px;
+    border-radius: 75px;
+    background-color: #000000;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    transition: all 0.4s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.lamp.on {
+    background-color: #ffeb3b; 
+    box-shadow: 0px 0px 30px rgba(255, 235, 59, 0.7);
+    transform: scale(1.1); 
+}
+
+.lamp.off {
+    background-color: #000000; 
+}
+
+.lamp.broken {
+    background-color: #000000;
+    box-shadow: none;
+    transform: rotate(15deg);
+}
+
+#lampTitle {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
+}
+
+
+.broken-message {
+    display: none; 
+    position: absolute;
+    bottom: -30px; 
+    font-size: 18px;
+    font-weight: bold;
+    color: #f44336; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
+}
+
+.lamp.broken #brokenMessage {
+    display: block;
+}
+
+.buttons {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.switch-button, .repair-button {
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    background-color: #ff8e00;
+    color: white;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    transform: scale(1);
+}
+
+.switch-button:hover {
+    background-color: #ff8e00;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
+}
+
+.switch-button:active {
+    transform: scale(0.95);
+}
+
+.repair-button {
+    background-color: #e52e2e;
+    display: none;
+}
+
+.repair-button:hover {
+    background-color: #e52e2e;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
+}
+
+.repair-button:active {
+    transform: scale(0.95);
+}
+
+button:focus {
+    outline: none;
+}
+
