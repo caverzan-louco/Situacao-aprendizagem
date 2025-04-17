@@ -1,31 +1,33 @@
+/* === Estilos Gerais === */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Arial', sans-serif; /* Define a fonte do texto */
     display: flex;
-    justify-content: center; 
-    align-items: center; 
-    height: 100vh; 
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    height: 100vh; /* Faz com que o conteúdo ocupe toda a altura da tela */
     margin: 0;
-    background: linear-gradient(135deg, #ff8e00, #e52e71); 
-    color: #fff;
-    text-align: center;
+    background: linear-gradient(135deg, #ff8e00, #e52e71); /* Aplica um fundo degradê colorido */
+    color: #fff; /* Define a cor do texto como branco */
+    text-align: center; /* Centraliza o texto */
 }
 
+/* === Container Principal === */
 .container {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Organiza os elementos em coluna */
     justify-content: center; 
     align-items: center; 
     width: 90%;
-    max-width: 600px;
+    max-width: 600px; /* Define um tamanho máximo para o container */
     padding: 20px;
-    border-radius: 15px;
-    background-color: rgba(0, 0, 0, 0.7); 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
+    border-radius: 15px; /* Borda arredondada */
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro com transparência */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Efeito de sombra */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Adiciona um contorno sutil */
+    transition: all 0.3s ease; /* Suaviza as transições */
 }
 
-
+/* === Área da Lâmpada === */
 .lamp-container {
     margin-bottom: 30px;
     display: flex;
@@ -36,106 +38,117 @@ body {
 .lamp {
     width: 150px;
     height: 220px;
-    border-radius: 75px;
-    background-color: #000000;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 75px; /* Formato oval para representar a lâmpada */
+    background-color: #000000; /* Inicialmente apagada */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); /* Efeito de sombra */
     position: relative;
-    transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out; /* Suaviza a transição ao ligar/desligar */
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
 }
 
+/* === Efeito quando a lâmpada está acesa === */
 .lamp.on {
-    background-color: #ffeb3b; 
-    box-shadow: 0px 0px 30px rgba(255, 235, 59, 0.7);
-    transform: scale(1.1); 
+    background-color: #ffeb3b; /* Muda a cor para amarelo quando ligada */
+    box-shadow: 0px 0px 30px rgba(255, 235, 59, 0.7); /* Adiciona um brilho ao redor */
+    transform: scale(1.1); /* Aumenta ligeiramente o tamanho */
 }
 
+/* === Lâmpada apagada === */
 .lamp.off {
-    background-color: #000000; 
+    background-color: #000000; /* Mantém a cor preta quando desligada */
 }
 
+/* === Lâmpada quebrada === */
 .lamp.broken {
-    background-color: #000000;
-    box-shadow: none;
-    transform: rotate(15deg);
+    background-color: #000000; /* Mantém a lâmpada preta */
+    box-shadow: none; /* Remove o brilho */
+    transform: rotate(15deg); /* Dá um leve efeito de inclinação para indicar que está quebrada */
 }
 
+/* === Texto dentro da lâmpada === */
 #lampTitle {
     position: absolute;
     top: 50%; 
     left: 50%; 
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%); /* Centraliza o texto dentro da lâmpada */
     font-size: 20px;
     font-weight: bold;
-    color: #333;
+    color: #333; /* Cor do texto */
     margin: 0;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Adiciona um efeito de sombra ao texto */
 }
 
-
+/* === Mensagem quando a lâmpada quebra === */
 .broken-message {
-    display: none; 
+    display: none; /* Inicialmente oculta */
     position: absolute;
-    bottom: -30px; 
+    bottom: -30px; /* Posição abaixo da lâmpada */
     font-size: 18px;
     font-weight: bold;
-    color: #f44336; 
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
+    color: #f44336; /* Cor vermelha para indicar problema */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Sombra para destaque */
 }
 
+/* Exibe a mensagem quando a lâmpada estiver quebrada */
 .lamp.broken #brokenMessage {
     display: block;
 }
 
+/* === Botões === */
 .buttons {
     display: flex;
-    gap: 25px;
+    gap: 25px; /* Espaçamento entre os botões */
     justify-content: center;
     margin-top: 40px;
 }
 
+/* === Estilização dos botões === */
 .switch-button, .repair-button {
     padding: 15px 30px;
     font-size: 18px;
-    border-radius: 50px;
+    border-radius: 50px; /* Bordas arredondadas */
     border: none;
-    cursor: pointer;
-    background-color: #ff8e00;
+    cursor: pointer; /* Cursor de clique */
+    background-color: #ff8e00; /* Cor padrão dos botões */
     color: white;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Efeito de sombra */
+    transition: all 0.3s ease; /* Suaviza as transições */
     transform: scale(1);
 }
 
+/* === Efeito de hover nos botões === */
 .switch-button:hover {
     background-color: #ff8e00;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
     transform: scale(1.05);
 }
 
+/* === Efeito de clique nos botões === */
 .switch-button:active {
     transform: scale(0.95);
 }
 
+/* === Botão de conserto (inicialmente oculto) === */
 .repair-button {
-    background-color: #e52e2e;
-    display: none;
+    background-color: #e52e2e; /* Vermelho para indicar correção */
+    display: none; /* Escondido até que a lâmpada quebre */
 }
 
+/* === Efeito de hover no botão de conserto === */
 .repair-button:hover {
     background-color: #e52e2e;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
     transform: scale(1.05);
 }
 
+/* === Efeito de clique no botão de conserto === */
 .repair-button:active {
     transform: scale(0.95);
 }
 
+/* === Remove o contorno padrão dos botões ao serem clicados === */
 button:focus {
     outline: none;
 }
-
